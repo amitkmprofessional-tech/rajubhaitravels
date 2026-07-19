@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/common/PageHero.astro";
+import Breadcrumb from "../components/common/Breadcrumb.astro";
+import CTA from "../components/common/CTA.astro";
+---
+<Layout title="About Us | Rajubhai Travels">
+<PageHero title="About Rajubhai Travels" subtitle="Reliable Tours & Travels in Bengaluru" image="/packages/mysuru.jpg"/>
+<Breadcrumb current="About"/>
+<section class="shell content">
+<h2>Who We Are</h2>
+<p>Rajubhai Travels is a trusted tours and travels company based in Bengaluru offering airport transfers, outstation trips, local sightseeing and holiday packages.</p>
+<h2>Mission</h2>
+<p>Deliver safe, affordable and memorable travel experiences.</p>
+<h2>Vision</h2>
+<p>Become one of Bengaluru's most trusted travel brands.</p>
+<h2>Our Team</h2>
+<ul>
+<li>Owner - Raju Kumar</li>
+<li>Website Developer & Maintainer - Amit Kumar Mishra</li>
+<li>Website Tester - Prajwal S</li>
+</ul>
+</section>
+<CTA/>
+<style>
+.content{max-width:900px;padding:50px 20px;line-height:1.9}
+</style>
+</Layout>

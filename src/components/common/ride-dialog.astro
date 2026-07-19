@@ -1,0 +1,42 @@
+---
+---
+
+<dialog id="rideDialog" aria-labelledby="dialog-title" aria-describedby="rideSummary">
+  <button class="close" id="closeDialog" type="button" aria-label="Close ride request">×</button>
+  <p class="eyebrow">YOUR TRIP</p>
+  <h2 id="dialog-title">Ride request received</h2>
+  <p id="rideSummary" aria-live="polite">We’ll match you with the perfect car.</p>
+  <div class="dialog-options">
+    <button type="button" data-payment="online">Pay online</button>
+    <button type="button" data-payment="after_ride">Pay after ride</button>
+  </div>
+</dialog>
+
+<script>
+  const dialog = document.querySelector<HTMLDialogElement>("#rideDialog");
+  const summary = document.querySelector<HTMLParagraphElement>("#rideSummary");
+  const closeBtn = document.querySelector<HTMLButtonElement>("#closeDialog");
+  const paymentBtns = document.querySelectorAll<HTMLButtonElement>("[data-payment]");
+
+  let currentBookingId: string | null = null;
+
+  document.addEventListener("booking:created", (event) => {
+    const detail = (event as CustomEvent).detail;
+    currentBookingId = detail?.bookingId ?? null;
+    if (summary) {
+      summary.textContent = `From ${detail.pickup} to ${detail.dropoff}. Choose a payment preference to confirm.`;
+    }
+    dialog?.showModal();
+  });
+
+  closeBtn?.addEventListener("click", () => dialog?.close());
+
+  // NOTE: payment preference is currently just UI. Wire this button up to
+  // a real payment gateway (Razorpay/Stripe) or a PATCH /api/bookings/:id
+  // endpoint before relying on it in production.
+  paymentBtns.forEach((btn) =>
+    btn.addEventListener("click", () => {
+      dialog?.close();
+    })
+  );
+</script>

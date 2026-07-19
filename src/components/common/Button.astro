@@ -1,0 +1,21 @@
+---
+// A reusable link-styled-as-button. Use `variant` to pick a look that
+// already exists in the global stylesheet.
+export interface Props {
+  href: string;
+  variant?: "search" | "dark" | "self-drive" | "nav-cta";
+  class?: string;
+}
+const { href, variant = "dark", class: className = "" } = Astro.props;
+
+const variantClass: Record<string, string> = {
+  search: "search-btn",
+  dark: "dark-btn",
+  "self-drive": "self-drive-cta",
+  "nav-cta": "nav-cta",
+};
+---
+
+<a href={href} class={`${variantClass[variant]} ${className}`.trim()}>
+  <slot />
+</a>

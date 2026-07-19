@@ -1,0 +1,50 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/common/PageHero.astro";
+import Breadcrumb from "../components/common/Breadcrumb.astro";
+import CTA from "../components/common/CTA.astro";
+---
+<Layout title="Fleet | Rajubhai Travels">
+<PageHero
+  title="Our Fleet"
+  subtitle="Comfortable, clean and reliable vehicles for every journey."
+  image="/packages/goa.jpg" />
+
+<Breadcrumb current="Fleet" />
+
+<section class="shell fleet">
+  <h2>Available Vehicle</h2>
+
+  <div class="card">
+    <img src="/cars/ertiga.jpg" alt="Maruti Suzuki Ertiga" />
+    <div class="info">
+      <h3>Maruti Suzuki Ertiga</h3>
+      <ul>
+        <li>✓ 7 Seater</li>
+        <li>✓ Air Conditioned</li>
+        <li>✓ Large Luggage Space</li>
+        <li>✓ Ideal for Airport & Outstation Trips</li>
+        <li>✓ Family Friendly</li>
+      </ul>
+      <a class="btn" href="https://wa.me/918709478665">Book Now</a>
+    </div>
+  </div>
+
+  <div class="notice">
+    <h3>More Vehicles Coming Soon</h3>
+    <p>We are expanding our fleet to offer more travel options.</p>
+  </div>
+</section>
+
+<CTA />
+
+<style>
+.fleet{padding:60px 20px}
+.card{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;background:#fff;border-radius:16px;box-shadow:0 10px 25px rgba(0,0,0,.08);padding:24px}
+.card img{width:100%;border-radius:12px}
+.info ul{line-height:2}
+.btn{display:inline-block;margin-top:16px;background:#2563eb;color:#fff;text-decoration:none;padding:12px 22px;border-radius:10px}
+.notice{margin-top:40px;padding:24px;background:#f8fafc;border-radius:12px}
+@media(max-width:800px){.card{grid-template-columns:1fr}}
+</style>
+</Layout>

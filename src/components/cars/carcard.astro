@@ -1,0 +1,27 @@
+---
+export interface Props {
+  type: string;
+  model: string;
+  seats: string;
+  price: string;
+  image: string;
+  popular?: boolean;
+}
+const { type, model, seats, price, image, popular = false } = Astro.props;
+---
+
+<article class="car-card">
+  <div class="car-image">
+    <img src={image} alt={`${type}: ${model}`} width="760" height="500" loading="lazy" decoding="async" />
+    <span class={`tag ${popular ? "popular" : ""}`}>{popular ? "MOST POPULAR" : type.toUpperCase()}</span>
+  </div>
+  <div class="car-info">
+    <h3>{type}</h3>
+    <p>{model}</p>
+    <div class="car-meta">
+      <span>♙ {seats}</span>
+      <span>AC</span>
+      <b>from <strong>{price}</strong>/km</b>
+    </div>
+  </div>
+</article>

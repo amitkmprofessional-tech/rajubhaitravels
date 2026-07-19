@@ -1,0 +1,260 @@
+---
+const packages = [
+  {
+    title: "Mysuru",
+    description: "Royal palaces, gardens and heritage attractions.",
+    image: "/packages/mysuru.jpg",
+  },
+  {
+    title: "Coorg",
+    description: "Coffee plantations, waterfalls and scenic hills.",
+    image: "/packages/coorg.jpg",
+  },
+  {
+    title: "Chikmangaluru",
+    description: "Coffee estates, mountains and breathtaking viewpoints.",
+    image: "/packages/chikmangaluru.jpg",
+  },
+  {
+    title: "Ooty",
+    description: "Tea gardens, lakes and pleasant hill station weather.",
+    image: "/packages/ooty.jpg",
+  },
+  {
+    title: "Goa",
+    description: "Beautiful beaches and unforgettable vacations.",
+    image: "/packages/goa.jpg",
+  },
+  {
+    title: "Tirupati",
+    description: "Comfortable pilgrimage trips with flexible timings.",
+    image: "/packages/tirupati.jpg",
+  },
+  {
+    title: "Hampi",
+    description: "Discover the UNESCO World Heritage monuments.",
+    image: "/packages/hampi.jpg",
+  },
+  {
+    title: "Mumbai",
+    description: "Business travel, sightseeing and family visits.",
+    image: "/packages/mumbai.jpg",
+  },
+  {
+    title: "Pune",
+    description: "Corporate, education and weekend travel.",
+    image: "/packages/pune.jpg",
+  },
+];
+---
+
+<section class="packages shell" id="packages">
+
+  <div class="heading">
+    <p class="eyebrow">POPULAR DESTINATIONS</p>
+
+    <h2>Explore Our Tour Packages</h2>
+
+    <p>
+      Travel comfortably with Rajubhai Travels to some of India's most popular
+      destinations.
+    </p>
+  </div>
+
+  <div class="package-grid">
+
+    {
+      packages.map((pkg) => (
+
+        <article class="card">
+
+          <img src={pkg.image} alt={pkg.title} loading="lazy" />
+
+          <div class="content">
+
+            <h3>{pkg.title}</h3>
+
+            <p>{pkg.description}</p>
+
+          </div>
+
+        </article>
+
+      ))
+    }
+
+  </div>
+
+  <div class="enquiry">
+
+    <h3>Planning a Trip?</h3>
+
+    <p>
+      Contact us for custom tour plans, pricing and vehicle availability.
+    </p>
+
+    <a
+      href="https://wa.me/918709478665?text=Hello%20Rajubhai%20Travels,%20I%20would%20like%20to%20enquire%20about%20your%20tour%20packages."
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Direct Enquiry
+    </a>
+
+  </div>
+
+</section>
+
+<style>
+
+.packages{
+    padding:80px 0;
+}
+
+.heading{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.heading h2{
+    font-size:2.3rem;
+    margin:10px 0;
+}
+
+.heading p:last-child{
+    max-width:700px;
+    margin:auto;
+    color:#666;
+}
+
+.package-grid{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:28px;
+
+}
+
+.card{
+
+    background:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 8px 30px rgba(0,0,0,.08);
+    transition:.35s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 45px rgba(0,0,0,.15);
+
+}
+
+.card img{
+
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    display:block;
+
+}
+
+.content{
+
+    padding:22px;
+
+}
+
+.content h3{
+
+    margin-bottom:12px;
+    font-size:1.35rem;
+
+}
+
+.content p{
+
+    color:#666;
+    line-height:1.7;
+
+}
+
+.enquiry{
+
+    margin-top:70px;
+    background:#0f172a;
+    color:white;
+    padding:45px;
+    border-radius:22px;
+    text-align:center;
+
+}
+
+.enquiry h3{
+
+    font-size:2rem;
+    margin-bottom:15px;
+
+}
+
+.enquiry p{
+
+    color:#d6d6d6;
+    max-width:650px;
+    margin:auto;
+
+}
+
+.enquiry a{
+
+    display:inline-block;
+    margin-top:30px;
+    padding:14px 32px;
+    border-radius:50px;
+    background:#25D366;
+    color:white;
+    font-weight:700;
+    text-decoration:none;
+    transition:.3s;
+
+}
+
+.enquiry a:hover{
+
+    transform:translateY(-3px);
+    background:#20bd5a;
+
+}
+
+@media(max-width:768px){
+
+    .heading h2{
+
+        font-size:1.8rem;
+
+    }
+
+    .card img{
+
+        height:190px;
+
+    }
+
+    .enquiry{
+
+        padding:30px 20px;
+
+    }
+
+    .enquiry h3{
+
+        font-size:1.6rem;
+
+    }
+
+}
+
+</style>

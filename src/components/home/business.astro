@@ -1,0 +1,29 @@
+---
+export interface Props {
+  savedAmount?: string;
+  memberCount?: number;
+}
+const { savedAmount = "₹ 1,24,800", memberCount = 42 } = Astro.props;
+const chartHeights = [35, 52, 42, 78, 64, 96, 85];
+---
+
+<section class="business shell" id="business" aria-labelledby="business-title">
+  <div>
+    <p class="eyebrow">FOR TEAMS ON THE MOVE</p>
+    <h2 id="business-title">Travel smarter,<br /><em>together.</em></h2>
+    <p>One simple platform for all your team’s ground travel. Control costs, save time, and keep everyone moving.</p>
+    <a class="dark-btn" href="#help">Explore Business Travel <span aria-hidden="true">→</span></a>
+  </div>
+  <div class="business-card" aria-label="Business travel savings this month">
+    <p>THIS MONTH</p>
+    <h3>{savedAmount}</h3>
+    <span>saved on business travel</span>
+    <div class="chart" aria-hidden="true">
+      {chartHeights.map((h) => <i style={`height:${h}%`}></i>)}
+    </div>
+    <div class="avatars">
+      <span>SK</span><span>AR</span><span>+</span>
+      <b>{memberCount} team members travelling</b>
+    </div>
+  </div>
+</section>

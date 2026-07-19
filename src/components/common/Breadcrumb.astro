@@ -1,0 +1,17 @@
+---
+export interface Props{
+current:string;
+}
+const {current}=Astro.props;
+---
+<nav class="breadcrumb shell">
+<a href="/">Home</a>
+<span>›</span>
+<span>{current}</span>
+</nav>
+
+<style>
+.breadcrumb{padding:20px 0;font-size:.95rem}
+.breadcrumb a{text-decoration:none;color:#2563eb}
+.breadcrumb span{margin:0 6px}
+</style>

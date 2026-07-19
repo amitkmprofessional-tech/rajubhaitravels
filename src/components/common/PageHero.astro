@@ -1,0 +1,27 @@
+---
+export interface Props {
+  title: string;
+  subtitle?: string;
+  image?: string;
+}
+const {
+  title,
+  subtitle = "",
+  image = "/packages/goa.jpg"
+} = Astro.props;
+---
+<section class="page-hero" style={`background-image:url(${image})`}>
+  <div class="overlay">
+    <div class="shell">
+      <h1>{title}</h1>
+      <p>{subtitle}</p>
+    </div>
+  </div>
+</section>
+
+<style>
+.page-hero{height:320px;background-size:cover;background-position:center}
+.overlay{height:100%;background:rgba(0,0,0,.55);display:flex;align-items:center}
+.overlay h1{color:#fff;font-size:3rem}
+.overlay p{color:#f3f4f6;font-size:1.1rem;max-width:700px}
+</style>

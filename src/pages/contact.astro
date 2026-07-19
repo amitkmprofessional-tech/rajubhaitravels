@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/common/PageHero.astro";
+import Breadcrumb from "../components/common/Breadcrumb.astro";
+---
+<Layout title="Contact | Rajubhai Travels">
+<PageHero title="Contact Us" subtitle="We're here to help you plan your next journey." image="/packages/coorg.jpg"/>
+<Breadcrumb current="Contact"/>
+
+<section class="shell contact">
+<div class="grid">
+<div class="box"><h3>Call</h3><a href="tel:+918709478665">+91 87094 78665</a></div>
+<div class="box"><h3>WhatsApp</h3><a href="https://wa.me/918709478665">Chat Now</a></div>
+<div class="box"><h3>Email</h3><a href="mailto:rk092576@gmail.com">rk092576@gmail.com</a></div>
+<div class="box"><h3>Location</h3><p>Bengaluru, Karnataka, India</p></div>
+</div>
+
+<h2>Business Hours</h2>
+<p>Monday - Sunday : Open 24×7 (subject to booking availability)</p>
+</section>
+
+<style>
+.contact{padding:60px 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.box{padding:24px;border-radius:14px;background:#fff;box-shadow:0 8px 20px rgba(0,0,0,.08)}
+</style>
+</Layout>

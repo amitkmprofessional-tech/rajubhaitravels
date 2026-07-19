@@ -1,0 +1,42 @@
+---
+---
+
+<section class="customers shell" id="customers" aria-labelledby="customers-title">
+  <div class="customers-copy">
+    <p class="eyebrow">MEMORIES ON THE ROAD</p>
+    <h2 id="customers-title">Our happy <em>customers.</em></h2>
+    <p>Share a favourite travel moment with Raju Bhai Travels. Your photo appears in this gallery while you’re on this page.</p>
+  </div>
+  <div class="customer-gallery" id="customerGallery" aria-live="polite">
+    <div class="gallery-empty" id="galleryEmpty">
+      <span aria-hidden="true">⌁</span>
+      <b>Your customer stories belong here</b>
+      <small>Add photos from a road trip, airport ride, or family outing.</small>
+    </div>
+  </div>
+
+</section>
+
+<script>
+  const photoInput = document.querySelector<HTMLInputElement>("#customerPhotos");
+  const gallery = document.querySelector<HTMLDivElement>("#customerGallery");
+  const emptyGallery = document.querySelector<HTMLDivElement>("#galleryEmpty");
+
+  photoInput?.addEventListener("change", () => {
+    if (!photoInput.files || !gallery || !emptyGallery) return;
+    const photos = Array.from(photoInput.files).slice(0, 8);
+    if (!photos.length) return;
+
+    gallery.querySelectorAll(".customer-photo").forEach((photo) => photo.remove());
+    emptyGallery.hidden = true;
+
+    photos.forEach((file) => {
+      const image = document.createElement("img");
+      image.className = "customer-photo";
+      image.src = URL.createObjectURL(file);
+      image.alt = `Customer travel photo: ${file.name}`;
+      image.onload = () => URL.revokeObjectURL(image.src);
+      gallery.append(image);
+    });
+  });
+</script>

@@ -1,0 +1,77 @@
+---
+export interface Props {
+  brand?: string;
+}
+const { brand = "rajubhaitravels" } = Astro.props;
+const year = new Date().getFullYear();
+---
+
+<footer id="help" class="footer">
+  <div class="shell footer-grid">
+    <div class="footer-brand-section">
+      <a href="/" class="footer-brand" translate="no">
+        <img src="/logo.png" alt="Rajubhai Travels Logo" class="footer-logo" />
+        <span>{brand}<span class="brand-domain">.com</span></span>
+      </a>
+      <p class="footer-text">
+        Rajubhai Travels provides reliable taxi services, airport transfers,
+        holiday tours, outstation trips and comfortable travel across Bengaluru and India.
+      </p>
+    </div>
+
+    <div>
+      <h4>Services</h4>
+      <a href="#booking-form">Airport Transfer</a>
+      <a href="#booking-form">Outstation Trips</a>
+      <a href="#booking-form">Local Sightseeing</a>
+      <a href="#booking-form">Holiday Packages</a>
+    </div>
+
+    <div>
+      <h4>Company</h4>
+      <a href="/about">About Us</a>
+      <a href="/fleet">Fleet</a>
+      <a href="/faq">FAQ</a>
+      <a href="/contact">Contact Us</a>
+    </div>
+
+    <div>
+      <h4>Legal</h4>
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-and-conditions">Terms & Conditions</a>
+      <a href="/booking-policy">Booking Policy</a>
+      <a href="/cancellation-refund-policy">Cancellation & Refund</a>
+      <a href="/self-drive-rental-terms">Self-Drive Rental Terms</a>
+      <a href="/cookie-policy">Cookie Policy</a>
+      <a href="/disclaimer">Disclaimer</a>
+    </div>
+
+    <div>
+      <h4>Contact</h4>
+      <a href="tel:+918709478665">📞 +91 87094 78665</a>
+      <a href="https://wa.me/918709478665">💬 WhatsApp</a>
+      <a href="mailto:rk092576@gmail.com">✉ Email Us</a>
+
+      <h4 style="margin-top:20px;">Follow Us</h4>
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </div>
+
+  <div class="shell footer-bottom">
+    <span>© {year} {brand}.com. All Rights Reserved.</span>
+    <span>Designed & Developed by <strong>Amit Kumar Mishra</strong></span>
+  </div>
+</footer>
+
+<style>
+.footer{background:#111827;color:#d1d5db;padding-top:60px;margin-top:80px}
+.footer-grid{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:40px}
+.footer h4{color:#fff;margin-bottom:14px}
+.footer a{display:block;color:#cbd5e1;text-decoration:none;margin:10px 0;transition:.2s}
+.footer a:hover{color:#fff;padding-left:4px}
+.footer-text{margin-top:18px;line-height:1.8;color:#9ca3af}
+.footer-bottom{border-top:1px solid #374151;margin-top:50px;padding:25px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;text-align:center}}
+</style>

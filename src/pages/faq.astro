@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/common/PageHero.astro";
+import Breadcrumb from "../components/common/Breadcrumb.astro";
+import CTA from "../components/common/CTA.astro";
+---
+<Layout title="FAQ | Rajubhai Travels">
+<PageHero title="Frequently Asked Questions" subtitle="Everything you need to know before booking." image="/packages/mysuru.jpg"/>
+<Breadcrumb current="FAQ"/>
+
+<section class="shell faq">
+<input class="search" placeholder="Search FAQs (visual only)" />
+
+<details open><summary>How do I book a cab?</summary><p>Book by calling or messaging us on WhatsApp.</p></details>
+<details><summary>Do you provide airport pickup?</summary><p>Yes, 24×7 airport pickup and drop are available based on booking.</p></details>
+<details><summary>Which destinations do you cover?</summary><p>Mysuru, Goa, Ooty, Coorg, Chikmagaluru, Tirupati, Hampi, Mumbai, Pune and more.</p></details>
+<details><summary>Do you offer customized packages?</summary><p>Yes. We can tailor your trip according to your requirements.</p></details>
+<details><summary>What if I don't find my answer?</summary><p>Please contact us via phone or WhatsApp.</p></details>
+</section>
+
+<CTA/>
+
+<style>
+.faq{padding:60px 20px;max-width:900px}
+.search{width:100%;padding:14px;margin-bottom:24px;border:1px solid #ddd;border-radius:10px}
+details{margin-bottom:16px;border:1px solid #ddd;border-radius:10px;padding:16px}
+summary{cursor:pointer;font-weight:600}
+</style>
+</Layout>

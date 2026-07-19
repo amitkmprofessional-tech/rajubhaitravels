@@ -1,0 +1,25 @@
+---
+const steps = [
+  { number: "01", title: "Book in seconds", copy: "Tell us where and when. We’ll take care of the rest." },
+  { number: "02", title: "Meet your driver", copy: "Get driver details and track their arrival live." },
+  { number: "03", title: "Enjoy the ride", copy: "Sit back, relax, and arrive feeling refreshed." },
+];
+---
+
+<section class="steps" aria-labelledby="steps-title">
+  <div class="shell">
+    <div class="steps-header">
+      <p class="eyebrow light">SIMPLE BY DESIGN</p>
+      <h2 id="steps-title">From doorstep<br />to destination.</h2>
+    </div>
+    <div class="step-grid">
+      {steps.map((step) => (
+        <article>
+          <b>{step.number}</b>
+          <h3>{step.title}</h3>
+          <p>{step.copy}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

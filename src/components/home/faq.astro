@@ -1,0 +1,104 @@
+---
+const faqs = [
+  {
+    question: "What services does Rajubhai Travels provide?",
+    answer: "We provide airport transfers, outstation taxi services, local sightseeing, holiday tours, one-way trips, round trips, and customized travel packages across Bengaluru and South India."
+  },
+  {
+    question: "How can I book a taxi?",
+    answer: "You can contact us directly by phone or WhatsApp. We'll confirm availability, pricing, and pickup details."
+  },
+  {
+    question: "Do you provide airport pickup and drop services?",
+    answer: "Yes. We offer reliable airport pickup and drop services to and from Kempegowda International Airport, Bengaluru."
+  },
+  {
+    question: "Which destinations do you cover?",
+    answer: "We serve Mysuru, Coorg, Chikmagaluru, Ooty, Goa, Tirupati, Hampi, Mumbai, Pune, and many other destinations."
+  },
+  {
+    question: "Which vehicles are available?",
+    answer: "Our fleet includes comfortable and spacious vehicles such as the Suzuki Ertiga, suitable for families, business travelers, and groups."
+  },
+  {
+    question: "Can I book a taxi for multiple days?",
+    answer: "Yes. We provide customized multi-day tour packages and long-distance travel services."
+  },
+  {
+    question: "Is advance booking required?",
+    answer: "Advance booking is recommended, especially on weekends, holidays, and festival seasons."
+  },
+  {
+    question: "What payment methods do you accept?",
+    answer: "Payment options will be confirmed during booking. Please contact us for the latest payment methods."
+  },
+  {
+    question: "Do you provide customized travel packages?",
+    answer: "Yes. We can customize travel packages based on your destination, duration, and travel preferences."
+  },
+  {
+    question: "How can I contact Rajubhai Travels?",
+    answer: "You can reach us through our phone number or WhatsApp. We aim to respond to enquiries as quickly as possible."
+  }
+];
+---
+
+<section class="faq shell">
+  <h2>Frequently Asked Questions</h2>
+  <p class="subtitle">Find answers to some of the most common questions about our tours, taxi services, and travel packages.</p>
+
+  {
+    faqs.map((item) => (
+      <details class="faq-item">
+        <summary>{item.question}</summary>
+        <p>{item.answer}</p>
+      </details>
+    ))
+  }
+</section>
+
+<style>
+.faq{
+  padding:70px 0;
+  max-width:900px;
+}
+.faq h2{
+  text-align:center;
+  font-size:2rem;
+  margin-bottom:12px;
+}
+.subtitle{
+  text-align:center;
+  color:#666;
+  margin-bottom:30px;
+}
+.faq-item{
+  border:1px solid #e5e5e5;
+  border-radius:12px;
+  margin-bottom:16px;
+  background:#fff;
+  overflow:hidden;
+}
+.faq-item summary{
+  cursor:pointer;
+  padding:18px 20px;
+  font-weight:600;
+  list-style:none;
+}
+.faq-item summary::-webkit-details-marker{
+  display:none;
+}
+.faq-item summary::after{
+  content:"+";
+  float:right;
+  font-size:1.2rem;
+}
+.faq-item[open] summary::after{
+  content:"−";
+}
+.faq-item p{
+  padding:0 20px 20px;
+  color:#555;
+  line-height:1.8;
+}
+</style>

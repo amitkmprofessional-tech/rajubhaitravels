@@ -1,0 +1,70 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/common/Navbar.astro';
+import Footer from '../components/common/Footer.astro';
+import SeoContent from "../components/home/seo-content.astro";
+import ContactOptions from "../components/home/contact-options.astro";
+import RideDialog from '../components/common/ride-dialog.astro';
+import WhatsappButton from '../components/common/whatsapp-button.astro';
+
+import FAQ from "../components/home/faq.astro";
+import Services from '../components/home/services.astro';
+import Fleet from '../components/home/fleet.astro';
+import Tracking from '../components/home/tracking.astro';
+import Steps from '../components/home/steps.astro';
+import Business from '../components/home/business.astro';
+import TourPackages from "../components/home/tour-packages.astro";
+import Testimonials from '../components/home/testimonials.astro';
+import AppBanner from '../components/home/app-banner.astro';
+import type { Car } from '../components/home/fleet.astro';
+
+// TODO: source this from the database (a Cars collection) once there's more
+// than one vehicle, so the fleet can be managed without a code change.
+const cars: Car[] = [
+  {
+    type: 'MUV',
+    model: 'Maruti Suzuki Ertiga ZXI+',
+    seats: '7 seats',
+    price: '₹17.50',
+    // TODO: this hotlinks a third-party CDN image you don't control/own.
+    // Replace with your own photographed/licensed image in src/assets and
+    // serve it via Astro's <Image /> component for optimization.
+    image: 'https://imgd.aeplcdn.com/664x374/n/c6es93a_1572125.jpg?q=80',
+    popular: true,
+  },
+];
+---
+
+<Layout>
+  <a class="skip-link" href="#main-content">Skip to booking</a>
+
+<Navbar />
+
+<main id="main-content" style="padding-top: 80px;">
+
+  <Services />
+
+  <ContactOptions />
+
+  <Fleet cars={cars} />
+
+  <TourPackages />
+
+  <Tracking />
+
+  <Steps />
+
+  <Business />
+
+  <Testimonials />
+
+<FAQ />
+
+  <AppBanner />
+
+</main>
+  <Footer />
+  <WhatsappButton />
+  <RideDialog />
+<SeoContent />
+</Layout>

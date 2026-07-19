@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+<Layout title="Tour Packages | Rajubhai Travels">
+<section class="shell">
+<h1>Tour Packages</h1>
+<p>Choose from our popular destinations.</p>
+<div class="grid">
+<a class="card" href="/tour-packages/mysore">Mysore</a>
+<a class="card" href="/tour-packages/coorg">Coorg</a>
+<a class="card" href="/tour-packages/chikmagaluru">Chikmagaluru</a>
+<a class="card" href="/tour-packages/ooty">Ooty</a>
+<a class="card" href="/tour-packages/goa">Goa</a>
+<a class="card" href="/tour-packages/tirupati">Tirupati</a>
+<a class="card" href="/tour-packages/hampi">Hampi</a>
+<a class="card" href="/tour-packages/mumbai">Mumbai</a>
+<a class="card" href="/tour-packages/pune">Pune</a>
+</div>
+</section>
+<style>.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}.card{padding:24px;background:#fff;border-radius:12px;text-decoration:none;box-shadow:0 8px 20px rgba(0,0,0,.08)}</style>
+</Layout>

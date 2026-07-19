@@ -1,0 +1,46 @@
+---
+import CarCard from "../cars/carcard.astro";
+
+export interface Car {
+  type: string;
+  model: string;
+  seats: string;
+  price: string;
+  image: string;
+  popular?: boolean;
+}
+
+export interface Props {
+  cars: Car[];
+}
+const { cars } = Astro.props;
+---
+
+<section class="fleet-section shell" id="fleet" aria-labelledby="fleet-title">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">RIDE YOUR WAY</p>
+      <h2 id="fleet-title">A car for every <em>occasion.</em></h2>
+    </div>
+    <a href="#booking-form">See all cars <span aria-hidden="true">→</span></a>
+  </div>
+
+  <div class="cars">
+    {cars.map((car) => <CarCard {...car} />)}
+  </div>
+
+  <aside class="self-drive" aria-labelledby="self-drive-title">
+    <div class="self-drive-icon" aria-hidden="true">⌁</div>
+    <div>
+      <p class="eyebrow">SELF-DRIVE FACILITY</p>
+      <h3 id="self-drive-title">Drive the Ertiga yourself in Bengaluru.</h3>
+      <p>Maruti Suzuki Ertiga ZXI+ · 7 seats · fully sanitised and ready for your trip.</p>
+    </div>
+    <div class="self-drive-price">
+      <span>Starting at</span>
+      <strong>₹ 2,000</strong>
+      <small>per day</small>
+    </div>
+    <a href="#booking-form" class="self-drive-cta">Book self-drive <span aria-hidden="true">→</span></a>
+  </aside>
+</section>

@@ -1,0 +1,45 @@
+---
+const items = [
+  {
+    icon: "✈",
+    color: "orange",
+    title: "Airport transfer",
+    subtitle: "On time, every time",
+    whatsapp:
+      "https://wa.me/918709478665?text=Hello%20Rajubhai%20Travels,%0A%0AI%20would%20like%20to%20book%20an%20Airport%20Transfer.%0A%0APlease%20find%20my%20details%20below:%0A%0AName:%0APickup%20Location:%0AAirport:%0ADate:%0ATime:%0ANumber%20of%20Passengers:%0A%0AKindly%20share%20the%20fare%20and%20availability.%20Thank%20you.",
+  },
+  {
+    icon: "▣",
+    color: "mint",
+    title: "Outstation rides",
+    subtitle: "Explore beyond the city",
+    whatsapp:
+      "https://wa.me/918709478665?text=Hello%20Rajubhai%20Travels,%0A%0AI%20would%20like%20to%20book%20an%20Outstation%20Ride.%0A%0APlease%20find%20my%20details%20below:%0A%0AName:%0AFrom:%0ATo:%0ADeparture%20Date:%0AReturn%20Date:%0ANumber%20of%20Passengers:%0A%0AKindly%20share%20the%20fare%20and%20availability.%20Thank%20you.",
+  },
+  {
+    icon: "◷",
+    color: "violet",
+    title: "Hourly rental",
+    subtitle: "Keep a car at your service",
+    whatsapp:
+      "https://wa.me/918709478665?text=Hello%20Rajubhai%20Travels,%0A%0AI%20would%20like%20to%20book%20an%20Hourly%20Rental.%0A%0APlease%20find%20my%20details%20below:%0A%0AName:%0APickup%20Location:%0ADate:%0ATime:%0ANumber%20of%20Hours:%0ANumber%20of%20Passengers:%0A%0AKindly%20share%20the%20fare%20and%20availability.%20Thank%20you.",
+  },
+];
+---
+
+<section class="quick shell" aria-label="Travel options">
+  {items.map((item) => (
+   <a
+  href={item.whatsapp}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="quick-item"
+>
+      <span class={`quick-icon ${item.color}`} aria-hidden="true">{item.icon}</span>
+      <span><b>{item.title}</b><small>{item.subtitle}</small></span>
+      <strong class="whatsapp-icon">
+  <img src="/whatsapp.png" alt="WhatsApp" />
+</strong>
+    </a>
+  ))}
+</section>

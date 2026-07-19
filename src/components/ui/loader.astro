@@ -1,0 +1,31 @@
+---
+// Small reusable loading spinner. Not yet wired up anywhere — intended for
+// future async UI (e.g. while a booking request is in flight).
+export interface Props {
+  label?: string;
+}
+const { label = "Loading…" } = Astro.props;
+---
+
+<span class="loader" role="status" aria-live="polite">
+  <span class="loader-spinner" aria-hidden="true"></span>
+  <span class="sr-only">{label}</span>
+</span>
+
+<style>
+  .loader { display: inline-flex; align-items: center; }
+  .loader-spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #d9d4c2;
+    border-top-color: var(--ink, #163b38);
+    border-radius: 50%;
+    animation: loader-spin 0.7s linear infinite;
+  }
+  @keyframes loader-spin {
+    to { transform: rotate(360deg); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .loader-spinner { animation: none; }
+  }
+</style>
