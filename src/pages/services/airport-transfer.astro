@@ -1,0 +1,27 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PageHero from "../../components/common/PageHero.astro";
+import Breadcrumb from "../../components/common/Breadcrumb.astro";
+import CTA from "../../components/common/CTA.astro";
+---
+<Layout title="Airport Transfer | Rajubhai Travels">
+<PageHero title="Airport Transfer" subtitle="Reliable airport pickup and drop service." image="/hero/airport.jpg" />
+<Breadcrumb current="Airport Transfer" />
+<section class="shell service-page">
+<h2>Airport Transfer</h2>
+<p>Reliable airport pickup and drop service.</p>
+<div class="card">
+<h3>Highlights</h3>
+<ul>
+<li>24×7 Service</li><li>Flight tracking</li><li>Door-to-door pickup</li><li>Professional drivers</li><li>Clean vehicles</li>
+</ul>
+<a class="book" href="https://wa.me/918709478665">Book on WhatsApp</a>
+</div>
+</section>
+<CTA />
+<style>
+.service-page{padding:60px 20px}
+.card{background:#fff;border-radius:16px;padding:28px;box-shadow:0 10px 25px rgba(0,0,0,.08)}
+.book{display:inline-block;margin-top:20px;background:#16a34a;color:#fff;text-decoration:none;padding:12px 20px;border-radius:10px}
+</style>
+</Layout>

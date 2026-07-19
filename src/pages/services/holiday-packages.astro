@@ -1,0 +1,27 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PageHero from "../../components/common/PageHero.astro";
+import Breadcrumb from "../../components/common/Breadcrumb.astro";
+import CTA from "../../components/common/CTA.astro";
+---
+<Layout title="Holiday Packages | Rajubhai Travels">
+<PageHero title="Holiday Packages" subtitle="Customized holiday packages across India." image="/hero/holiday.jpg" />
+<Breadcrumb current="Holiday Packages" />
+<section class="shell service-page">
+<h2>Holiday Packages</h2>
+<p>Customized holiday packages across India.</p>
+<div class="card">
+<h3>Highlights</h3>
+<ul>
+<li>Goa</li><li>Coorg</li><li>Ooty</li><li>Mysuru</li><li>Chikmagaluru</li>
+</ul>
+<a class="book" href="https://wa.me/918709478665">Book on WhatsApp</a>
+</div>
+</section>
+<CTA />
+<style>
+.service-page{padding:60px 20px}
+.card{background:#fff;border-radius:16px;padding:28px;box-shadow:0 10px 25px rgba(0,0,0,.08)}
+.book{display:inline-block;margin-top:20px;background:#16a34a;color:#fff;text-decoration:none;padding:12px 20px;border-radius:10px}
+</style>
+</Layout>
