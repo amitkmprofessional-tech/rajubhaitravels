@@ -1,42 +1,69 @@
 ---
+const customers = [
+  "/customers/customer 1.jpg",
+  "/customers/customer 2.jpg",
+  "/customers/customer 3.jpg",
+  "/customers/customer 4.jpg",
+  "/customers/customer 5.jpg",
+  "/customers/customer 6.jpg",
+];
 ---
 
 <section class="customers shell" id="customers" aria-labelledby="customers-title">
+
   <div class="customers-copy">
     <p class="eyebrow">MEMORIES ON THE ROAD</p>
-    <h2 id="customers-title">Our happy <em>customers.</em></h2>
-    <p>Share a favourite travel moment with Raju Bhai Travels. Your photo appears in this gallery while you’re on this page.</p>
+
+    <h2 id="customers-title">
+      Our Happy <em>Customers.</em>
+    </h2>
+
+    <p>
+      Every smile tells a story. We are grateful to our customers for
+      trusting Rajubhai Travels for their family trips, airport transfers,
+      holiday tours, and memorable journeys across Karnataka and beyond.
+    </p>
   </div>
-  <div class="customer-gallery" id="customerGallery" aria-live="polite">
-    <div class="gallery-empty" id="galleryEmpty">
-      <span aria-hidden="true">⌁</span>
-      <b>Your customer stories belong here</b>
-      <small>Add photos from a road trip, airport ride, or family outing.</small>
-    </div>
+
+  <div class="customer-gallery">
+    {customers.map((photo) => (
+      <div class="customer-card">
+        <img src={photo} alt="Happy Customer" loading="lazy" />
+      </div>
+    ))}
   </div>
 
 </section>
 
-<script>
-  const photoInput = document.querySelector<HTMLInputElement>("#customerPhotos");
-  const gallery = document.querySelector<HTMLDivElement>("#customerGallery");
-  const emptyGallery = document.querySelector<HTMLDivElement>("#galleryEmpty");
+<style>
+.customer-gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:22px;
+    margin-top:2rem;
+}
 
-  photoInput?.addEventListener("change", () => {
-    if (!photoInput.files || !gallery || !emptyGallery) return;
-    const photos = Array.from(photoInput.files).slice(0, 8);
-    if (!photos.length) return;
+.customer-card{
+    overflow:hidden;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+    transition:.35s;
+    background:white;
+}
 
-    gallery.querySelectorAll(".customer-photo").forEach((photo) => photo.remove());
-    emptyGallery.hidden = true;
+.customer-card:hover{
+    transform:translateY(-6px);
+}
 
-    photos.forEach((file) => {
-      const image = document.createElement("img");
-      image.className = "customer-photo";
-      image.src = URL.createObjectURL(file);
-      image.alt = `Customer travel photo: ${file.name}`;
-      image.onload = () => URL.revokeObjectURL(image.src);
-      gallery.append(image);
-    });
-  });
-</script>
+.customer-card img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    display:block;
+    transition:.4s;
+}
+
+.customer-card:hover img{
+    transform:scale(1.05);
+}
+</style>

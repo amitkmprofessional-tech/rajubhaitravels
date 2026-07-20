@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/common/Navbar.astro';
 import Footer from '../components/common/Footer.astro';
 import SeoContent from "../components/home/seo-content.astro";
+import Founder from "../components/founder/founder.astro";
 
 import RideDialog from '../components/common/ride-dialog.astro';
 import WhatsappButton from '../components/common/whatsapp-button.astro';
@@ -49,7 +50,7 @@ const cars: Car[] = [
   <Fleet cars={cars} />
 
   <TourPackages />
-
+<Founder />
   <Tracking />
 
   <Steps />
