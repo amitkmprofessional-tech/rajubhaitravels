@@ -19,7 +19,7 @@ const { cars } = Astro.props;
 <section class="fleet-section shell" id="fleet" aria-labelledby="fleet-title">
   <div class="section-heading">
     <div>
-      <p class="eyebrow">RIDE YOUR WAY</p>
+      <p class="eyebrow">DRIVE YOUR WAY</p>
       <h2 id="fleet-title">A car for every <em>occasion.</em></h2>
     </div>
     <a href="#booking-form">See all cars <span aria-hidden="true">→</span></a>
@@ -28,19 +28,57 @@ const { cars } = Astro.props;
   <div class="cars">
     {cars.map((car) => <CarCard {...car} />)}
   </div>
+<aside class="self-drive" aria-labelledby="self-drive-title">
+  <div class="self-drive-icon" aria-hidden="true">⌁</div>
 
-  <aside class="self-drive" aria-labelledby="self-drive-title">
-    <div class="self-drive-icon" aria-hidden="true">⌁</div>
-    <div>
-      <p class="eyebrow">SELF-DRIVE FACILITY</p>
-      <h3 id="self-drive-title">Drive the Ertiga yourself in Bengaluru.</h3>
-      <p>Maruti Suzuki Ertiga ZXI+ · 7 seats · fully sanitised and ready for your trip.</p>
-    </div>
-    <div class="self-drive-price">
-      <span>Starting at</span>
-      <strong>₹ 2,000</strong>
-      <small>per day</small>
-    </div>
-    <a href="#booking-form" class="self-drive-cta">Book self-drive <span aria-hidden="true">→</span></a>
-  </aside>
-</section>
+  <div>
+    <p class="eyebrow">SELF-DRIVE FACILITY</p>
+
+    <h3 id="self-drive-title">
+      Drive the Ertiga yourself in Bengaluru.
+    </h3>
+
+    <p>
+      Maruti Suzuki Ertiga ZXI+ · 7 seats · Fully sanitised and ready for your trip.
+    </p>
+  </div>
+
+  <div class="self-drive-price">
+    <span>Starting at</span>
+    <strong>₹ 2,000</strong>
+    <small>per day</small>
+  </div>
+
+  <a
+    class="self-drive-btn"
+    href="https://wa.me/+918709478665?text=Hello%20Rajubhai%20Travels,%20I%20am%20interested%20in%20your%20Self%20Drive%20car%20rental.%20Please%20share%20the%20availability,%20pricing,%20required%20documents,%20and%20booking%20details."
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Click to WhatsApp Message Directly!
+  </a>
+</aside>
+  </section>
+<style>
+.self-drive-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:12px 24px;
+    margin-top:18px;
+
+    background:#25D366;
+    color:#fff;
+
+    text-decoration:none;
+    border-radius:12px;
+
+    font-weight:700;
+    transition:.3s;
+}
+
+.self-drive-btn:hover{
+    background:#1fa855;
+    transform:translateY(-2px);
+}
+</style>

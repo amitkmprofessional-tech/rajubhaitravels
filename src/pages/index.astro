@@ -6,7 +6,7 @@ import SeoContent from "../components/home/seo-content.astro";
 import Founder from "../components/founder/founder.astro";
 
 import RideDialog from '../components/common/ride-dialog.astro';
-import WhatsappButton from '../components/common/whatsapp-button.astro';
+
 
 import FAQ from "../components/home/faq.astro";
 import Services from '../components/home/services.astro';
@@ -16,8 +16,9 @@ import Steps from '../components/home/steps.astro';
 import Business from '../components/home/business.astro';
 import TourPackages from "../components/home/tour-packages.astro";
 import Testimonials from '../components/home/testimonials.astro';
-import AppBanner from '../components/home/app-banner.astro';
+
 import type { Car } from '../components/home/fleet.astro';
+import OurTeam from "../components/ourteam/OurTeam.astro";
 
 // TODO: source this from the database (a Cars collection) once there's more
 // than one vehicle, so the fleet can be managed without a code change.
@@ -26,7 +27,7 @@ const cars: Car[] = [
     type: 'MUV',
     model: 'Maruti Suzuki Ertiga ZXI+',
     seats: '7 seats',
-    price: '₹17.50',
+    price: '₹17',
     // TODO: this hotlinks a third-party CDN image you don't control/own.
     // Replace with your own photographed/licensed image in src/assets and
     // serve it via Astro's <Image /> component for optimization.
@@ -50,22 +51,24 @@ const cars: Car[] = [
   <Fleet cars={cars} />
 
   <TourPackages />
+  <Testimonials />
 <Founder />
+<OurTeam />
   <Tracking />
 
   <Steps />
 
   <Business />
 
-  <Testimonials />
+  
 
 <FAQ />
 
-  <AppBanner />
+
 
 </main>
   <Footer />
-  <WhatsappButton />
+  
   <RideDialog />
 <SeoContent />
 </Layout>
