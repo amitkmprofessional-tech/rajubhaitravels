@@ -1,0 +1,51 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  image?: string;
+  keywords?: string;
+}
+
+const {
+  title,
+  description,
+  canonical = Astro.site
+    ? new URL(Astro.url.pathname, Astro.site).toString()
+    : Astro.url.toString(),
+  image = "/og-image.jpg",
+  keywords =
+    "Rajubhai Travels, Car Rental Bengaluru, Taxi Service, Airport Transfer, Outstation Taxi, Holiday Packages"
+} = Astro.props;
+
+const siteName = "Rajubhai Travels";
+const imageUrl = Astro.site
+  ? new URL(image, Astro.site).toString()
+  : image;
+---
+
+<title>{title}</title>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="description" content={description} />
+<meta name="keywords" content={keywords} />
+<meta name="author" content="Rajubhai Travels" />
+<meta name="robots" content="index, follow" />
+
+<link rel="canonical" href={canonical} />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content={siteName} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={imageUrl} />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={imageUrl} />
+
+<meta name="theme-color" content="#0f766e" />

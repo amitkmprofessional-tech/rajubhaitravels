@@ -29,6 +29,18 @@ const structuredData = {
 <!doctype html>
 <html lang="en">
 <head>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-03L3ZSLQMR"></script>
+
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-03L3ZSLQMR', {
+    page_path: window.location.pathname,
+  });
+</script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{title}</title>
@@ -55,6 +67,49 @@ const structuredData = {
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 />
+<script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  "name": "Rajubhai Travels",
+  "url": "https://rajubhaitravels.com",
+  "logo": "https://rajubhaitravels.com/logo.png",
+  "image": "https://rajubhaitravels.com/og-image.jpg",
+  "telephone": "+91 8709478665",
+  "email": "info@rajubhaitravels.com",
+  "founder": {
+    "@type": "Person",
+    "name": "Raju Kumar"
+  },
+  "description": "Rajubhai Travels offers airport transfers, outstation taxi services, local sightseeing, and holiday packages from Bengaluru.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bengaluru",
+    "addressRegion": "Karnataka",
+    "addressCountry": "IN"
+  },
+  "areaServed": [
+    "Bengaluru",
+    "Mysuru",
+    "Coorg",
+    "Chikkamagaluru",
+    "Ooty",
+    "Goa",
+    "Tirupati",
+    "Hampi"
+  ],
+  "sameAs": [
+    "https://rajubhaitravels.com"
+  ],
+  "serviceType": [
+    "Airport Transfer",
+    "Outstation Taxi",
+    "Holiday Packages",
+    "Local Sightseeing",
+    "Car Rental"
+  ]
+}
+</script>
 </head>
 <body><slot /></body>
 </html>
