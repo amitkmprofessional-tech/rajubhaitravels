@@ -6,49 +6,73 @@ const customers = [
   "/customers/customer 4.jpg",
   "/customers/customer 5.jpg",
   "/customers/customer 6.jpg",
+  "/customers/customer 7.jpg",
+  "/customers/customer 8.jpg",
+  "/customers/customer 9.jpg",
+  "/customers/customer 10.jpg",
+  "/customers/customer 11.jpg",
+  "/customers/customer 12.jpg",
 ];
 ---
 
 <section class="customers shell" id="customers" aria-labelledby="customers-title">
 
-  <div class="customers-copy">
-    <p class="eyebrow">MEMORIES ON THE ROAD</p>
-
-    <h2 id="customers-title">
-      Our Happy <em>Customers.</em>
-    </h2>
-
-    <p>
-      Every smile tells a story. We are grateful to our customers for
-      trusting Rajubhai Travels for their family trips, airport transfers,
-      holiday tours, and memorable journeys across Karnataka and beyond.
-    </p>
-  </div>
-
   <div class="customer-gallery">
-    {customers.map((photo) => (
+
+  <div class="customer-track">
+
+    {[...customers, ...customers].map((photo, index) => (
+
       <div class="customer-card">
-        <img src={photo} alt="Happy Customer" loading="lazy" />
+
+        <img
+          src={photo}
+          alt={`Happy Customer ${index + 1}`}
+          loading="lazy"
+        />
+
       </div>
+
     ))}
+
   </div>
+
+</div>
 
 </section>
 
 <style>
+
 .customer-gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:22px;
+    overflow:hidden;
+    width:100%;
     margin-top:2rem;
+    position:relative;
+}
+
+.customer-track{
+    display:flex;
+    gap:22px;
+    width:max-content;
+    animation:scroll 35s linear infinite;
+}
+
+.customer-gallery:hover .customer-track{
+    animation-play-state:paused;
 }
 
 .customer-card{
-    overflow:hidden;
+    flex:0 0 auto;
+    width:300px;
+
     border-radius:18px;
-    box-shadow:0 10px 25px rgba(0,0,0,.15);
+    overflow:hidden;
+
+    background:#fff;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+
     transition:.35s;
-    background:white;
 }
 
 .customer-card:hover{
@@ -57,13 +81,37 @@ const customers = [
 
 .customer-card img{
     width:100%;
-    height:300px;
+    height:340px;
     object-fit:cover;
     display:block;
-    transition:.4s;
 }
 
-.customer-card:hover img{
-    transform:scale(1.05);
+@keyframes scroll{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(calc(-50% - 11px));
+    }
+
 }
+
+@media(max-width:768px){
+
+.customer-card{
+    width:220px;
+}
+
+.customer-card img{
+    height:260px;
+}
+
+.customer-track{
+    animation-duration:22s;
+}
+
+}
+
 </style>
